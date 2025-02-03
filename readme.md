@@ -1,5 +1,8 @@
 ### Referência
 
+Docker local
+https://github.com/markshust/docker-magento
+
 Documentação oficial pagarme
 https://docs.pagar.me/docs/magento-2-overview
 
@@ -29,7 +32,8 @@ Implementar interface Pagarme para pagamento com cartão de crédito.
 
 Adicione o módulo em seu projeto Magento em `app/code/SuperFrete/PagarmeGraphql`
 ```
-git clone git@github.com:wesleyalmd/magento-pagarme-graphql.git app/code/SuperFrete/PagarmeGraphql
+mkdir -p src/app/code/SuperFrete
+git clone git@github.com:wesleyalmd/pagarme-graphql.git app/code/SuperFrete/PagarmeGraphql
 ```
 
 Rode os comandos abaixo para instalar o módulo:
