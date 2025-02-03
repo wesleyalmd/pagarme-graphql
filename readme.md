@@ -51,6 +51,8 @@ bin/magento cache:flush
 
 ## Recurso de consulta de últimos pedidos
 
+![https://raw.githubusercontent.com/wesleyalmd/pagarme-graphql/refs/heads/master/orders-report.png](https://raw.githubusercontent.com/wesleyalmd/pagarme-graphql/refs/heads/master/orders-report.png)
+
 - Verificar se o usuário está logado
 - Obter os últimos pedidos a partir de um range de datas
 - Calcular o valor total dos pedidos
@@ -80,5 +82,6 @@ mutation {
     token
   }
 }
+```
 
 Utilize a collection postman com os requests "magento - Signin" e "magento - Get Sales Reports"
