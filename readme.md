@@ -20,7 +20,7 @@ Implementar interface Pagarme para pagamento com cartão de crédito.
 - [x] Query Graphql com public_key do pagarme
 - [x] Obter cardToken com appId pelo Postman
 
-Frontend Luma está com bug para fechar pedidos, realiza o pagamento (sandbox dev e produção, testado com cobrança real no cartão, mas não salva os dados na tabela e mantem a quote aberta. Para resolver esse problema precisaria aprofundar em debug. Portando, retornar wallet do usuário não foi realizado.
+Frontend Luma está com bug para fechar pedidos, realiza o pagamento sandbox dev e produção, testado com cobrança real no cartão, mas não salva os dados na tabela e mantem a quote aberta. Para resolver esse problema precisaria aprofundar em debug. Portando, retornar wallet do usuário não foi realizado.
 
 #### Possível continuação
 
@@ -46,3 +46,39 @@ bin/magento setup:di:compile
 bin/magento setup:static-content:deploy -f
 bin/magento cache:flush
 ```
+
+---
+
+## Recurso de consulta de últimos pedidos
+
+- Verificar se o usuário está logado
+- Obter os últimos pedidos a partir de um range de datas
+- Calcular o valor total dos pedidos
+- Calcular o ticket médio
+
+Query graphql:
+```
+query {
+  getOrdersReport(start_date: "2025-02-01", end_date: "2025-02-10") {
+    total_sales
+    average_ticket
+  }
+}
+```
+Headers
+```
+Authorization: "Bearer <token>"
+```
+
+##### Como obter o token do usuário
+```
+mutation {
+  generateCustomerToken(
+    email: "",
+    password: ""
+  ) {
+    token
+  }
+}
+
+Utilize a collection postman com os requests "magento - Signin" e "magento - Get Sales Reports"

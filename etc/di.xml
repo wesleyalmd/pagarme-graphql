@@ -4,7 +4,27 @@
 
     <type name="SuperFrete\PagarmeGraphql\Model\Resolver\PagarmePublicKey">
         <arguments>
-            <argument name="config" xsi:type="object">Pagarme\Pagarme\Gateway\Transaction\Base\Config\ConfigInterface</argument>
+            <argument name="pagarmeConfig" xsi:type="object">Pagarme\Pagarme\Gateway\Transaction\Base\Config\ConfigInterface</argument>
+        </arguments>
+    </type>
+
+    <type name="SuperFrete\PagarmeGraphql\Model\Resolver\GetOrdersReport">
+        <arguments>
+            <argument name="ordersReportModel" xsi:type="object">SuperFrete\PagarmeGraphql\Model\OrdersReport</argument>
+        </arguments>
+    </type>
+
+    <type name="SuperFrete\PagarmeGraphql\Model\Resolver\GetSalesData">
+        <arguments>
+            <argument name="ordersReport" xsi:type="object">SuperFrete\PagarmeGraphql\Model\OrdersReport</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\GraphQl\Config\Reader\SchemaReader">
+        <arguments>
+            <argument name="schema" xsi:type="array">
+                <item name="getOrdersReport" xsi:type="object">SuperFrete\PagarmeGraphql\Model\Resolver\GetOrdersReport</item>
+            </argument>
         </arguments>
     </type>
 

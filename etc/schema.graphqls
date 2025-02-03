@@ -4,3 +4,15 @@ type StoreConfig {
             class: "SuperFrete\\PagarmeGraphql\\Model\\Resolver\\PagarmePublicKey"
         )
 }
+
+type Query {
+    getOrdersReport(start_date: String!, end_date: String!): SalesDataReport!
+        @resolver(
+            class: "SuperFrete\\PagarmeGraphql\\Model\\Resolver\\GetOrdersReport"
+        )
+}
+
+type SalesDataReport {
+    total_sales: Float!
+    average_ticket: Float!
+}
