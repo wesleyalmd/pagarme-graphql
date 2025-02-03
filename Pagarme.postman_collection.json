@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "ee6092d2-6c17-4820-b828-20801c431dbe",
+		"name": "Pagarme",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23739825",
+		"_collection_link": "https://winter-crescent-373126.postman.co/workspace/Castle~5f647c83-8203-4cf6-83e6-51e08b8ca48f/collection/23739825-ee6092d2-6c17-4820-b828-20801c431dbe?action=share&source=collection_link&creator=23739825"
+	},
+	"item": [
+		{
+			"name": "[magento] Get Store Config",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    storeConfig {\n        locale\n        pagarme_public_key\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": "https://superfrete.local/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "[pagarme] Generate card token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"card\",\n  \"card\": {\n    \"holder_name\": \"WESLEY A RIBEIRO\",\n    \"number\": \"4000000000000010\",\n    \"exp_month\": \"12\",\n    \"exp_year\": \"30\",\n    \"cvv\": \"437\",\n    \"holder_document\": \"05329383056\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.mundipagg.com/core/v1/tokens?appId=pk_P5QAE1cxEH90AWlO",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mundipagg",
+						"com"
+					],
+					"path": [
+						"core",
+						"v1",
+						"tokens"
+					],
+					"query": [
+						{
+							"key": "appId",
+							"value": "pk_P5QAE1cxEH90AWlO"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
