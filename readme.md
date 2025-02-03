@@ -20,6 +20,8 @@ Implementar interface Pagarme para pagamento com cartão de crédito.
 - [x] Query Graphql com public_key do pagarme
 - [x] Obter cardToken com appId pelo Postman
 
+Frontend Luma está com bug para fechar pedidos, realiza o pagamento (sandbox dev e produção, testado com cobrança real no cartão, mas não salva os dados na tabela e mantem a quote aberta. Para resolver esse problema precisaria aprofundar em debug. Portando, retornar wallet do usuário não foi realizado.
+
 #### Possível continuação
 
 - Criar query graphql para obter parcelas a partir do cart_id
