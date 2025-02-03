@@ -33,7 +33,7 @@ Implementar interface Pagarme para pagamento com cartão de crédito.
 Adicione o módulo em seu projeto Magento em `app/code/SuperFrete/PagarmeGraphql`
 ```
 mkdir -p src/app/code/SuperFrete
-git clone git@github.com:wesleyalmd/pagarme-graphql.git app/code/SuperFrete/PagarmeGraphql
+git clone git@github.com:wesleyalmd/pagarme-graphql.git src/app/code/SuperFrete/PagarmeGraphql
 ```
 
 Rode os comandos abaixo para instalar o módulo:
