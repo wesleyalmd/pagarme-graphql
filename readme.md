@@ -12,10 +12,10 @@ Implementar interface Pagarme para pagamento com cartão de crédito.
 
 #### Tasks (fase de teste)
 
-[x] Discovery do pagarme integração e módulo Magento
-[x] Criar conta e integrar com ambiente de desenvolvimento
-[x] Query Graphql com public_key do pagarme
-[x] Obter cardToken com appId pelo Postman
+- [x] Discovery do pagarme integração e módulo Magento
+- [x] Criar conta e integrar com ambiente de desenvolvimento
+- [x] Query Graphql com public_key do pagarme
+- [x] Obter cardToken com appId pelo Postman
 
 #### Possível continuação
 
