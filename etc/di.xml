@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:framework:DependencyInjection/etc/di.xsd">
+
+    <type name="SuperFrete\PagarmeGraphql\Model\Resolver\PagarmePublicKey">
+        <arguments>
+            <argument name="config" xsi:type="object">Pagarme\Pagarme\Gateway\Transaction\Base\Config\ConfigInterface</argument>
+        </arguments>
+    </type>
+
+</config>

@@ -1,0 +1,6 @@
+type StoreConfig {
+    pagarme_public_key: String
+        @resolver(
+            class: "SuperFrete\\PagarmeGraphql\\Model\\Resolver\\PagarmePublicKey"
+        )
+}
