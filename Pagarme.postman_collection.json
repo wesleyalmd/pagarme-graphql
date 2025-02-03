@@ -38,7 +38,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://api.mundipagg.com/core/v1/tokens?appId=APP_ID",
+					"raw": "https://api.mundipagg.com/core/v1/tokens?appId=pk_P5QAE1cxEH90AWlO",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -53,10 +53,48 @@
 					"query": [
 						{
 							"key": "appId",
-							"value": "APP_ID"
+							"value": "pk_P5QAE1cxEH90AWlO"
 						}
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "[magento] Signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n  generateCustomerToken(\n    email: \"wesleyalmd@gmail.com\",\n    password: \"password123_\"\n  ) {\n    token\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": "https://superfrete.local/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "[magento] Get Sales Reports",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjEsInV0eXBpZCI6MywiaWF0IjoxNzM4NjIxNTg3LCJleHAiOjE3Mzg2MjUxODd9.mIc_1qCOv4fp95qlj3aUfqF57oCcQjL9YHCRNFblizI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n  getOrdersReport(start_date: \"2025-02-01\", end_date: \"2025-02-10\") {\n    total_sales\n    average_ticket\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": "https://superfrete.local/graphql"
 			},
 			"response": []
 		}
